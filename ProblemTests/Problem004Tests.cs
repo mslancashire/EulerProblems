@@ -12,23 +12,10 @@ namespace ProblemTests
             var sut = new Solution004();
 
             // act
-            var largestPalindrome = sut.GetLargestPalindrome(2);
+            var largestPalindrome = sut.GetLargestPalindrome_v1(2);
 
             // assert
             largestPalindrome.Should().Be(9009);
-        }
-
-        [Fact]
-        public void RunProblemTest4_check_solution_mine()
-        {
-            // arrange
-            var sut = new Solution004();
-
-            // act
-            var largestPalindrome = sut.GetLargestPalindrome(3);
-
-            // assert
-            largestPalindrome.Should().Be(906609);
         }
 
         [Fact]
@@ -38,7 +25,20 @@ namespace ProblemTests
             var sut = new Solution004();
 
             // act
-            var largestPalindrome = sut.GetLargestPalindrome_comment_version_1();
+            var largestPalindrome = sut.GetLargestPalindrome_v1(3);
+
+            // assert
+            largestPalindrome.Should().Be(906609);
+        }
+
+        [Fact]
+        public void RunProblemTest4_check_solution_v2()
+        {
+            // arrange
+            var sut = new Solution004();
+
+            // act
+            var largestPalindrome = sut.GetLargestPalindrome_v2(3);
 
             // assert
             largestPalindrome.Should().Be(906609);

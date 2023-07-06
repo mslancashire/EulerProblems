@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Problems.Problem004.Solution004Benchmarks-20230706-192730</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.5, OS=Windows 11 (10.0.22621.1848/22H2/2022Update/SunValley2)
+Intel Core i7-9750H CPU 2.60GHz, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.302
+  [Host]     : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.5 (7.0.523.17405), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>            Method</th><th> Mean</th><th>Error</th><th>StdDev</th><th>Ratio</th><th>RatioSD</th><th>Rank</th><th>Gen0</th><th>Gen1</th><th>Allocated</th><th>Alloc Ratio</th>
+</tr>
+</thead><tbody><tr><td>RunSolution_v2</td><td>876.9 &mu;s</td><td>16.45 &mu;s</td><td>20.80 &mu;s</td><td>0.01</td><td>0.00</td><td>1</td><td>105.4688</td><td>-</td><td>647.08 KB</td><td>0.01</td>
+</tr><tr><td>RunSolution_3rd_party_v1</td><td>23,307.9 &mu;s</td><td>462.06 &mu;s</td><td>784.61 &mu;s</td><td>0.35</td><td>0.02</td><td>2</td><td>5937.5000</td><td>-</td><td>36412.34 KB</td><td>0.65</td>
+</tr><tr><td>RunSolution_v1</td><td>65,908.5 &mu;s</td><td>1,303.09 &mu;s</td><td>3,122.12 &mu;s</td><td>1.00</td><td>0.00</td><td>3</td><td>9125.0000</td><td>375.0000</td><td>55978.99 KB</td><td>1.00</td>
+</tr></tbody></table>
+</body>
+</html>

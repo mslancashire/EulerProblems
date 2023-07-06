@@ -7,44 +7,43 @@
     /// </summary>
     public class Solution004
     {
-        public int GetLargestPalindrome_comment_version_1()
+        public int GetLargestPalindrome_v2(short digits)
         {
-            int sum;
-            int Largest = -1;
-            string res;
-            bool isPalindrome = true;
+            var startingAt = GenerateMaxNumber(digits);
+            var endingAt = GenerateMinNumber(digits);
+            int largestPalindromicProduct = -1;
 
-            for (int x = 999; x >= 1; x--)
+            for (var i = startingAt; i >= endingAt; i--)
             {
-                for (int y = 999; y >= 1; y--)
+                var firstNumber = i;
+
+                for (var j = startingAt; j >= endingAt; j--)
                 {
-                    sum = x * y;
-                    res = sum.ToString();
-                    isPalindrome = true;
+                    var secondNumber = j;
+                    var product = firstNumber * secondNumber;
 
-                    for (int t = 0; t < res.Length / 2; t++)
+                    if (IsPalindrome(product.ToString()) && product > largestPalindromicProduct)
                     {
-                        if (res[t] != res[res.Length - t - 1])
-                        {
-                            isPalindrome = false;
-                        }
+                        largestPalindromicProduct = product;
+                    }
 
-                        if (isPalindrome)
-                        {
-                            if (sum > Largest)
-                            {
-                                Largest = sum;
-                            }
-                        }
+                    // we can exit early if the product is no longer greater than the current largest palindromic product
+                    if (product < largestPalindromicProduct)
+                    {
+                        break;
                     }
                 }
             }
 
-            return Largest;
+            if (largestPalindromicProduct != -1)
+            {
+                return largestPalindromicProduct;
+            }
+
+            throw new Exception($"A palindromic number was not found from the product start at {startingAt} and ending at {endingAt}.");
         }
 
-
-        public int GetLargestPalindrome(short digits)
+        public int GetLargestPalindrome_v1(short digits)
         {
             var startingAt = GenerateMaxNumber(digits);
             var endingAt = GenerateMinNumber(digits);

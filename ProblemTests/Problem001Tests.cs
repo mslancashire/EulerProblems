@@ -1,10 +1,8 @@
-using Problems;
-using System.Linq;
-using Xunit;
+using Problems.Problem001;
 
 namespace ProblemTests
 {
-    public class Problem1Tests
+    public class Problem001Tests
     {
         [Fact]
         public void RunProblem1Example_should_return_correct_result()
@@ -13,7 +11,7 @@ namespace ProblemTests
             var upper = 10;
             var multiples = new int[] { 3, 5 };
 
-            var sut = new Solution0001();
+            var sut = new Solution001();
 
             // act
             var natualNumbers = sut.FindMultiples(multiples, upper);
@@ -29,7 +27,7 @@ namespace ProblemTests
             var upper = 1000;
             var multiples = new int[] { 3, 5 };
 
-            var sut = new Solution0001();
+            var sut = new Solution001();
 
             // act
             var natualNumbers = sut.FindMultiples(multiples, upper);
@@ -45,7 +43,7 @@ namespace ProblemTests
             var upper = 1000;
             var multiples = new int[] { 3, 5 };
 
-            var sut = new Solution0001();
+            var sut = new Solution001();
 
             // act
             var sum = sut.SumOfMultiples(multiples, upper);

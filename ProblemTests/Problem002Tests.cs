@@ -1,12 +1,8 @@
-﻿using Problems;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Xunit;
+﻿using Problems.Problem002;
 
 namespace ProblemTests
 {
-    public class Problem2Tests
+    public class Problem002Tests
     {
         [Fact]
         public void RunProblem2Test_check_fibonacci_numbers()
@@ -14,7 +10,7 @@ namespace ProblemTests
             // arrange
             var expectedFibonacciNumbers = new List<Int64> { 1, 2, 3, 5, 8 };
 
-            var sut = new Solution0002();
+            var sut = new Solution002();
 
             // act
             var fibonacciNumbers = sut.FibonacciNumbers(10);
@@ -30,7 +26,7 @@ namespace ProblemTests
             // arrange
             var expectedFibonacciNumbers = new List<Int64> { 2, 8 };
 
-            var sut = new Solution0002();
+            var sut = new Solution002();
 
             // act
             var evenFibonacciNumbers = sut.EvenFibonacciNumbers(10);
@@ -43,7 +39,7 @@ namespace ProblemTests
         public void RunProblem2Test_check_small_example()
         {
             // arrange
-            var sut = new Solution0002();
+            var sut = new Solution002();
 
             // act
             var sum = sut.SumOfEvenFibonacciNumbers(10);
@@ -56,7 +52,7 @@ namespace ProblemTests
         public void RunProblem2Test_check_solution()
         {
             // arrange
-            var sut = new Solution0002();
+            var sut = new Solution002();
 
             // act
             var sum = sut.SumOfEvenFibonacciNumbers(4000000);

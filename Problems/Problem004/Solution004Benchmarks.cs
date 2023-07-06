@@ -12,13 +12,13 @@ namespace Problems.Problem004
         }
 
         [Benchmark(Baseline = true)]
-        public void RunSolution_v1()
+        public void RunSolution_004_v1()
         {
             new Solution004().GetLargestPalindrome_v1(3);
         }
 
         [Benchmark]
-        public void RunSolution_v2()
+        public void RunSolution_004_v2()
         {
             new Solution004().GetLargestPalindrome_v2(3);
         }

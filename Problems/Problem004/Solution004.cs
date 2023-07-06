@@ -68,11 +68,7 @@
 
             if (palindromicProducts.Any())
             {
-                var max = palindromicProducts.OrderByDescending(p => p.Product).First();
-
-                Console.WriteLine($"{max.FirstNumber} x {max.SecoundNumber}");
-
-                return max.Product;
+                return palindromicProducts.OrderByDescending(p => p.Product).First().Product;
             }
 
             throw new Exception($"A palindromic number was not found from the product start at {startingAt} and ending at {endingAt}.");

@@ -45,18 +45,38 @@ namespace ProblemTests
             factors.Should().Equal(1, 2, 5, 10);
         }
 
-        [Fact]
-        public void FindFactorsOf_should_return_correct_factors_for_10_use_exclude()
+        [Theory]        
+        [InlineData(10)]
+        public void FindFactorsOf_should_return_correct_factors_use_exclude(int numberToCheck)
         {
             // arrange
             var sut = new Solution003();
 
             // act
-            var factors = sut.FindFactorsOf(10, false);
+            var factors = sut.FindFactorsOf(numberToCheck, false);
 
             // assert
             factors.Should().NotBeEmpty();
-            factors.Should().Equal(2, 5);
+            factors.Should().Equal(2,5);
+        }
+
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(5)]
+        [InlineData(7)]
+        [InlineData(11)]
+        [InlineData(13)]
+        public void FindFactorsOf_should_return_empty_factors_using_exclude_when_prime_number(int numberToCheck)
+        {
+            // arrange
+            var sut = new Solution003();
+
+            // act
+            var factors = sut.FindFactorsOf(numberToCheck, false);
+
+            // assert
+            factors.Should().BeEmpty();
         }
 
         [Fact]

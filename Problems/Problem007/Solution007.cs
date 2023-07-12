@@ -15,7 +15,6 @@ namespace Problems.Problem007
             var currentNumber = 1L;
             var currentPrimeIndex = 0L;
             var currentPrimeNumber = 0L;
-            //var helper = new Solution003();
             
             do
             {
